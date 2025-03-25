@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
 import { Person, PersonList } from '../../models';
+import { SearchPersonsComponent } from "../search-persons/search-persons.component";
 
 @Component({
   selector: 'app-list-persons',
-  imports: [],
+  imports: [SearchPersonsComponent],
   templateUrl: './list-persons.component.html',
   styleUrl: './list-persons.component.css'
 })
