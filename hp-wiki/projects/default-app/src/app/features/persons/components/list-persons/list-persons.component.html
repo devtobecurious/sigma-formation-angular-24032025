@@ -1,0 +1,28 @@
+@if(list.length == 0) {
+    <i>No data</i>
+} @else {
+<table>
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Name</th>
+      <th>Age</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    @for (item of list; track item.id; let i = $index, f = $first, l = $last, e
+    = $even, o = $odd) {
+    <tr class="center">
+      <td>{{ item.id }}</td>
+      <td>{{ item }}</td>
+      <td>18</td>
+    </tr>
+    } @empty {
+    <tr>
+      <td colspan="3">No data</td>
+    </tr>
+    }
+  </tbody>
+</table>
+}
