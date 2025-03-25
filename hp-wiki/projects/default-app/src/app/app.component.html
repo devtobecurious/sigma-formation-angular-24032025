@@ -1,4 +1,8 @@
-<app-list-persons /> 
-<app-list-persons /> 
+{{ titleParentMaj()}}
+
+<app-list-persons (changeColor)="setDarkModeColor($event)" title="Liste des personnes" /> 
+<app-list-persons [title]="titleParent()" /> 
 
 <sig-list-creatures></sig-list-creatures>
+
+

@@ -1,6 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, input, output } from '@angular/core';
 import { Person, PersonList } from '../../models';
 import { SearchPersonsComponent } from "../search-persons/search-persons.component";
+
+export type ColorType = 1 | 7 | 10
 
 @Component({
   selector: 'app-list-persons',
@@ -9,10 +11,14 @@ import { SearchPersonsComponent } from "../search-persons/search-persons.compone
   styleUrl: './list-persons.component.css'
 })
 export class ListPersonsComponent {
-  //list = ['Harry Potter', 'Hermione Granger', 'Ron Weasley'];
+  title = input.required<string>()
   list: PersonList = []
-  //   { id: 1, name: 'Harry Potter', age: 30 },
-  //   { id: 2, name: 'Hermione Granger', age: 30 },
-  //   { id: 3, name: 'Ron Weasley', age: 30 }    
-  // ];
+
+
+  changeColor = output<ColorType>()
+
+  setColor(): void {
+    this.changeColor.emit(7)
+   // this.color.emit(10)
+  }
 }
