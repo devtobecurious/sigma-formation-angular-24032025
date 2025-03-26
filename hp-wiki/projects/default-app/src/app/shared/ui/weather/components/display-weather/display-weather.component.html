@@ -1,0 +1,6 @@
+<h1>{{ title() }}</h1>
+
+@let weather = weather$ | async;
+@let weather2 = weather$ | async;
+
+<div class="temp">{{weather?.label | uppercase}} </div>
