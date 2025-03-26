@@ -5,10 +5,11 @@ import { ListCreaturesComponent } from "./features/creatures/components/list-cre
 import { GetAllPersonsService } from './features/persons/services/get-all-persons.service';
 import { LoggerService } from './shared/tools/logger.service';
 import { DisplayWeatherComponent } from "./shared/ui/weather/components/display-weather/display-weather.component";
+import { DiscoverObsComponent } from './learning/discover-obs/discover-obs.component';
 
 @Component({
   selector: 'app-root',
-  imports: [ListPersonsComponent, ListCreaturesComponent, DisplayWeatherComponent, DisplayWeatherComponent],
+  imports: [ListPersonsComponent, ListCreaturesComponent, DisplayWeatherComponent, DiscoverObsComponent, DisplayWeatherComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
   providers: [GetAllPersonsService]

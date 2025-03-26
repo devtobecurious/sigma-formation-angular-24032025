@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
 import { WeatherData } from '../models';
-import { interval, Observable, shareReplay, switchMap } from 'rxjs';
+import { filter, interval, Observable, shareReplay, switchMap } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -24,11 +24,12 @@ export class WeatherService {
 
   getOne(): Observable<WeatherData> {
     return interval(1000).pipe(
-      switchMap(() => this.coordinates$),
+      switchMap(tick => this.coordinates$),
       switchMap(coord => {
         const url = `https://api.open-meteo.com/v1/forecast?latitude=${coord.lat}&longitude=${coord.lon}&current=weather_code,temperature_2m,wind_speed_10m&hourly=temperature_2m,relative_humidity_2m,wind_speed_10m`
         return this.http.get<WeatherData>(url)
-     })
+     }),
+     filter(coord => coord.current.temperature_2m > 0)
     );
   }
 }
