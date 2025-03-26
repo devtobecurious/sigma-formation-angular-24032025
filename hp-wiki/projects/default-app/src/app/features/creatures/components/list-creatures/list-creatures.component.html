@@ -1,1 +1,7 @@
-<p>list-creatures works!</p>
+<sig-table-creatures [index]="2" [items]="list" (toEdit)="editOne($event)"></sig-table-creatures>
+
+@let monItem = editItem();
+
+@if(monItem) {
+    <i>Edit à créer</i>
+}

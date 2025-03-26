@@ -1,0 +1,6 @@
+@let list = items();
+
+@for (item of list; track item.id) {
+    <sig-row-creatures (toEdit)="clickToEdit($event)" [item]="item"></sig-row-creatures>
+}
+
