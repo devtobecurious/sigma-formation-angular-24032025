@@ -1,6 +1,6 @@
 <h1>{{ title() }}</h1>
 
 @let weather = weather$ | async;
-@let weather2 = weather$ | async;
 
-<div class="temp">{{weather?.label | uppercase}} </div>
+<div class="temp">{{weather?.current?.temperature_2m?.toString()}} </div>
+<div class="code">{{weather?.current?.weather_code?.toString()}} </div>

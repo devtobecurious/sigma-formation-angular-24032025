@@ -4,10 +4,11 @@ import { ColorType, ListPersonsComponent } from "./features/persons/components/l
 import { ListCreaturesComponent } from "./features/creatures/components/list-creatures/list-creatures.component";
 import { GetAllPersonsService } from './features/persons/services/get-all-persons.service';
 import { LoggerService } from './shared/tools/logger.service';
+import { DisplayWeatherComponent } from "./shared/ui/weather/components/display-weather/display-weather.component";
 
 @Component({
   selector: 'app-root',
-  imports: [ ListPersonsComponent, ListCreaturesComponent],
+  imports: [ListPersonsComponent, ListCreaturesComponent, DisplayWeatherComponent, DisplayWeatherComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
   providers: [GetAllPersonsService]
