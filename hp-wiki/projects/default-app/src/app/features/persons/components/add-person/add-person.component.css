@@ -1,0 +1,9 @@
+input.ng-valid {
+    background-color: darkgreen;
+    color: white;
+}
+
+input.ng-invalid {
+    background-color: darkred;
+    color: white;
+}

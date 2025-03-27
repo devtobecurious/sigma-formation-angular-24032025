@@ -1,0 +1,19 @@
+{{item | json}}
+
+<form #addForm="ngForm" (ngSubmit)="saveTdf()">
+    <input name="name" type="text" required [(ngModel)]="item.name" >
+    <input name="age" type="number" min="10" required [(ngModel)]="item.age" >
+
+    <button [disabled]="!addForm.form.valid" type="submit">Sauvegarder</button>
+</form>
+
+<form [formGroup]="rxAddForm" (ngSubmit)="saveReactive()">
+    <input type="text" formControlName="name"  >
+    <input name="age" type="number" formControlName="age" >
+
+    @if(isNameValid) {
+        <i>Email requis</i>
+    }
+ 
+    <button type="submit" [disabled]="rxAddForm.invalid">Sauvegarder</button>
+</form>

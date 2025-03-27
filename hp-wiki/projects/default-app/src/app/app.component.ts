@@ -6,10 +6,11 @@ import { GetAllPersonsService } from './features/persons/services/get-all-person
 import { LoggerService } from './shared/tools/logger.service';
 import { DisplayWeatherComponent } from "./shared/ui/weather/components/display-weather/display-weather.component";
 import { DiscoverObsComponent } from './learning/discover-obs/discover-obs.component';
+import { AddPersonComponent } from "./features/persons/components/add-person/add-person.component";
 
 @Component({
   selector: 'app-root',
-  imports: [ListPersonsComponent, ListCreaturesComponent, DisplayWeatherComponent, DiscoverObsComponent, DisplayWeatherComponent],
+  imports: [ListPersonsComponent, ListCreaturesComponent, DisplayWeatherComponent, DiscoverObsComponent, DisplayWeatherComponent, AddPersonComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
   providers: [GetAllPersonsService]
