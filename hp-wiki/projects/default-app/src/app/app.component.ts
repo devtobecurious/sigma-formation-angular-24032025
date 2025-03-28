@@ -7,10 +7,11 @@ import { LoggerService } from './shared/tools/logger.service';
 import { DisplayWeatherComponent } from "./shared/ui/weather/components/display-weather/display-weather.component";
 import { DiscoverObsComponent } from './learning/discover-obs/discover-obs.component';
 import { AddPersonComponent } from "./features/persons/components/add-person/add-person.component";
+import { DiscoverResourcesComponent } from "./learnings/discover-resources/discover-resources.component";
 
 @Component({
   selector: 'app-root',
-  imports: [ RouterOutlet, RouterLink, ListPersonsComponent, ListCreaturesComponent, DisplayWeatherComponent, DiscoverObsComponent, DisplayWeatherComponent, AddPersonComponent],
+  imports: [RouterOutlet, RouterLink, DiscoverResourcesComponent, ListPersonsComponent, ListCreaturesComponent, DisplayWeatherComponent, DiscoverObsComponent, DisplayWeatherComponent, AddPersonComponent, DiscoverResourcesComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
   providers: [GetAllPersonsService]

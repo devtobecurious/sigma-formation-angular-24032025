@@ -1,0 +1,13 @@
+@let peopleResult = peopleResource.value();
+
+@if(peopleResource.isLoading()) {
+    <i>Loading...</i>
+}
+
+@if(peopleResource.error()) {
+    <b>Error !</b>
+}
+
+@for (item of peopleResult?.results; track item.name) {
+    <div>{{item.name}}</div>
+}
